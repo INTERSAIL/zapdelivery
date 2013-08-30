@@ -1,0 +1,35 @@
+<%- model_class = Outbox -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:destinatario) %>:</strong></dt>
+  <dd><%= @outbox.destinatario %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:oggetto) %>:</strong></dt>
+  <dd><%= @outbox.oggetto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:messaggio) %>:</strong></dt>
+  <dd><%= @outbox.messaggio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:allegato) %>:</strong></dt>
+  <dd><%= @outbox.allegato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_invio) %>:</strong></dt>
+  <dd><%= @outbox.data_invio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:stato) %>:</strong></dt>
+  <dd><%= @outbox.stato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_stato) %>:</strong></dt>
+  <dd><%= @outbox.data_stato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:risposta) %>:</strong></dt>
+  <dd><%= @outbox.risposta %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              outboxes_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_outbox_path(@outbox), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              outbox_path(@outbox),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

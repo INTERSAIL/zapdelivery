@@ -1,0 +1,13 @@
+<%= simple_form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :ragione_sociale %>
+  <%= f.input :partita_iva %>
+  <%= f.input :codice_fiscale %>
+  <%= f.input :indirizzo %>
+  <%= f.input :data_attivazione, as: :date_picker %>
+  <%= f.input :stato %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                customers_path, :class => 'btn' %>
+  </div>
+<% end %>
