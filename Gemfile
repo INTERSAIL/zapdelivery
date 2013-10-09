@@ -39,6 +39,10 @@ gem "twitter-bootstrap-rails"
 gem "enumerize"
 gem "simple_form", '>= 3.0.0.rc'
 gem "bootstrap-datepicker-rails"
+gem "devise"
+
+gem "rails_admin"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

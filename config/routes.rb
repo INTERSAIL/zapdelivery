@@ -1,8 +1,15 @@
 Zapdelivery::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  resources :admins
+
+  devise_for :users
     resources :customers do
       resources :departments, shallow: :true
     end
+
+  get "admin" => "users#index"
+
 
   resources :outboxes
 
