@@ -1,5 +1,11 @@
 Zapdelivery::Application.routes.draw do
 
+  resources :assignments
+
+  resources :accounts
+
+  resources :channels
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :admins
 
