@@ -6,5 +6,4 @@ class ApplicationController < ActionController::Base
   def current_customer
     params[:customer_id]
   end
-
 end
