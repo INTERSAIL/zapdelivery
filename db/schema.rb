@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126170533) do
+ActiveRecord::Schema.define(version: 20131203160900) do
 
   create_table "accounts", force: true do |t|
     t.string   "connection_string"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20131126170533) do
     t.text     "risposta"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "shipment_id"
   end
 
   create_table "rails_admin_histories", force: true do |t|
@@ -112,6 +113,15 @@ ActiveRecord::Schema.define(version: 20131126170533) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+
+  create_table "shipments", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description"
+    t.integer  "user_id"
+    t.string   "template_xid"
+    t.string   "source_xid"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

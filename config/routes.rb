@@ -1,5 +1,7 @@
 Zapdelivery::Application.routes.draw do
 
+  resources :shipments
+
   resources :assignments
 
   resources :accounts
