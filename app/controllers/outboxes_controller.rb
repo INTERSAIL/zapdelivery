@@ -11,6 +11,13 @@ class OutboxesController < ApplicationController
   # GET /outboxes/1
   # GET /outboxes/1.json
   def show
+
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.js { render_modal(@outbox.oggetto, "outboxes/outbox") }
+      format.json { render json: @outbox }
+    end
   end
 
   # GET /outboxes/new

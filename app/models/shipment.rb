@@ -1,24 +1,37 @@
 require 'intersail/attachment_util'
 
 class Shipment < ActiveRecord::Base
+  include Intersail::Util::AttachmentUtil
+
   has_many :outboxes
   belongs_to :user
 
+
+  attr_attachment(:template , :source)
+
+
+=begin
   def template
-     #Intersail::Util::AttachmentUtil.getUrl template_xid
+     getUrl template_xid
   end
 
   def template=templateStream
-    self.template_xid = AttachmentUtil.save(templateStream)
+    write_attribute(:template_xid , saveStream(templateStream))
   end
 
   def source
-    #AttachmentUtil.getUrl source_xid
+    getUrl source_xid
   end
 
-  def source=sourceStream
-    self.source_xid = AttachmentUtil.save(sourceStream)
+  def source=val
+    write_attribute(:source_xid , saveStream(val))
   end
+=end
+
+
+
+
+
 
   def outbox_count
     self.outboxes.count

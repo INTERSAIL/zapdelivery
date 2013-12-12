@@ -1,35 +1,32 @@
-<h1>Listing shipments</h1>
-
-<table>
+<%- model_class = Shipment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>User</th>
-      <th>Template</th>
-      <th>Source</th>
-      <th>Outbox count</th>
-      <th></th>
-      <th></th>
-      <th></th>
+
+      <th>Tipo</th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><i class="icon-file"></i> <%= model_class.human_attribute_name(:template) %></th>
+      <th><i class="icon-file"></i> <%= model_class.human_attribute_name(:source) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
     </tr>
   </thead>
-
   <tbody>
     <% @shipments.each do |shipment| %>
       <tr>
-        <td><%= shipment.description %></td>
-        <td><%= shipment.user %></td>
-        <td><%= shipment.template %></td>
-        <td><%= shipment.source %></td>
-        <td><%= shipment.outbox_count %></td>
-        <td><%= link_to 'Show', shipment %></td>
-        <td><%= link_to 'Edit', edit_shipment_path(shipment) %></td>
-        <td><%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= shipment.zf_id %></td>
+        <td><%= link_to shipment.description, shipment_path(shipment) %></td>
+        <td><%= fileAttachmentLink shipment, :template %></td>
+        <td><%= fileAttachmentLink shipment, :source %></td>
+        <td><%=l shipment.created_at %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Shipment', new_shipment_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_shipment_path,
+            :class => 'btn btn-primary' %>

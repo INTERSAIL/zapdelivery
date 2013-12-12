@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :assignments
   has_many :accounts, through: :assignments
+  has_many :shipments
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

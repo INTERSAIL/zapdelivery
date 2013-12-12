@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   def current_customer
     params[:customer_id]
   end
+
+  def render_modal( titolo, partial)
+      render :partial => 'layouts/show', locals: {:titolo => titolo, :corpo =>  partial }
+  end
+
 end

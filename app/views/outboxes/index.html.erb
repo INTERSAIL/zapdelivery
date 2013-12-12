@@ -13,7 +13,7 @@
       <th><%= model_class.human_attribute_name(:data_stato) %></th>
       <th><%= model_class.human_attribute_name(:risposta) %></th>
       <th><%= model_class.human_attribute_name(:allegato) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+
     </tr>
   </thead>
   <tbody>
@@ -28,15 +28,6 @@
         <td><%= outbox.risposta %></td>
         <td><%= outbox.allegato %></td>
 
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_outbox_path(outbox), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      outbox_path(outbox),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>

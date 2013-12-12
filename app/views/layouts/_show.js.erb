@@ -1,0 +1,8 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("<%= titolo %>");
+
+$modalBody.html("<%= j render corpo  %>");
+
+$modal.modal();

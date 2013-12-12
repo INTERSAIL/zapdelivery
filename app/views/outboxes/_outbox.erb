@@ -1,0 +1,20 @@
+<%- model_class = Outbox -%>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:destinatario) %>:</strong></dt>
+  <dd><%= @outbox.destinatario %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:oggetto) %>:</strong></dt>
+  <dd><%= @outbox.oggetto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:messaggio) %>:</strong></dt>
+  <dd><%= @outbox.messaggio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:allegato) %>:</strong></dt>
+  <dd><%= @outbox.allegato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_invio) %>:</strong></dt>
+  <dd><%= @outbox.data_invio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:stato) %>:</strong></dt>
+  <dd><%= @outbox.stato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_stato) %>:</strong></dt>
+  <dd><%= @outbox.data_stato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:risposta) %>:</strong></dt>
+  <dd><%= @outbox.risposta %></dd>
+</dl>

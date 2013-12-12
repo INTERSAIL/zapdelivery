@@ -9,52 +9,58 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller.controller_name %>">
 
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fluid-top" role="navigation" id="topContainer">
   <div class="navbar-inner">
-    <div class="container-fluid">
-      <ul class="nav pull-right">
-        <div id="user_nav">
-          <% if user_signed_in? %>
-              <%= current_user.email %>
-              <%= link_to "Esci", destroy_user_session_path, :method => :delete %>
-          <% else %>
-              <%= link_to "Registrati", new_user_registration_path %> or <%= link_to "Autenticati", new_user_session_path %>
-          <% end %>
+
+    <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+
+    <%= link_to image_tag("logoIntersail.png", alt: "Intersail Website", class: "brand"), '#' , class: "span2" , style: "width: 14.5299%" %>
+
+    <div class="nav-collapse container-fluid">
+
+
+      <%= render 'layouts/login_items' %>
+
+    </div><!--/.nav-collapse -->
+
+
+
+
+
+  </div>
+
+</div>
+
+<%= bootstrap_flash %>
+
+<div class="container-fluid" id="middleContainer">
+  <div class="row-fluid" id="main">
+
+    <%= yield %>
+
+  </div><!--/row-->
+    <div class="row-fluid">
+      <div class="span8 offset4">
+        <div class="span8">
+          <footer>
+            <%= link_to image_tag("logo_poste.jpg", alt: "ZapDelivery"), '#' , class: "span2"  %>
+            <p>&copy; <%= link_to 'Intersail 2013', 'http://www.intersail.it/', target: "_blank" %> - ZapDelivery <%= ZAPDELIVERY_CONFIG['versione'] %></p>
+          </footer>
         </div>
-      </ul>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#">LatteWeb</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="divider-vertical"></li>
-          <li class="active"><%= link_to "outbox", outboxes_path%></li>
-          <li class="divider-vertical"></li>
-          <li><%= link_to "Servizi"%></li>
-          <li class="divider-vertical"></li>
-        </ul>
       </div>
     </div>
-  </div>
-</div>
+  </div> <!-- /container -->
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <h2>Servizi</h2>
-      ....
-    </div>
-    <div class="span10"><%= yield %></div>
-  </div>
-</div>
+
+<%= render 'layouts/modal' %>
+
 
 <script  type="text/javascript">
     $('.datepicker').datepicker({language: 'it-IT', autoclose:true});

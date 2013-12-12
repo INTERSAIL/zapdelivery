@@ -12,3 +12,53 @@
  *= require_tree .
  *= require bootstrap-datepicker
  */
+
+/*
+div#logo { background-color: #ECF601 ;
+background-image: linear-gradient(to bottom, #ECF601, #ECF601);}
+
+
+#logo, .navbar .container-fluid { background-color: #ECF601 ;}
+#logo a {margin:0;}*/
+#logo a {
+    background-color: #ECF601;
+    left: -20px;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 3px;
+    position: relative;
+    border-bottom-right-radius:1em;
+}
+
+#topContainer  { margin-bottom: 1px; }
+#topContainer  { border-bottom:3px solid #ECF601 ;border-top:3px solid #ECF601
+}
+#middleContainer   { border-top:3px solid #322FCE }
+
+body .navbar .brand     { padding: 0; }
+.navbar .nav.last       { float: right;}
+
+
+footer   { left: 0}
+footer a {color: #999999;}
+footer a:hover { background: none; color: #000000;}
+footer p { color: #999; text-align: center}
+footer {
+    background-color: #FFFFFF;
+    bottom: 0;
+    clear: both;
+    position: fixed;
+    text-align: center;
+    width: 99%;
+    z-index: 999;
+}
+
+
+#loading { position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1000; background-color: #ffffff;  opacity:0.6;
+    filter:alpha(opacity=60); /* For IE8 and earlier */
+    background-image: url("/assets/loading.gif"); background-repeat:no-repeat;
+    background-position: center center;
+}
+
+
+div.alert { margin: 0}

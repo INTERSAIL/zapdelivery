@@ -10,6 +10,9 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1
   # GET /shipments/1.json
   def show
+
+    @outboxes = @shipment.outboxes
+
   end
 
   # GET /shipments/new
@@ -25,6 +28,9 @@ class ShipmentsController < ApplicationController
   # POST /shipments.json
   def create
     @shipment = Shipment.new(shipment_params)
+
+    @shipment.user = current_user
+    b = @shipment.template_xid
 
     respond_to do |format|
       if @shipment.save
@@ -64,11 +70,11 @@ class ShipmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shipment
-      @shipment = Shipment.find(params[:id])
+      @shipment = Shipment.includes(:outboxes).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipment_params
-      params.require(:shipment).permit(:description, :user, :template, :source, :outbox_count)
+      params.require(:shipment).permit(:description, :user, :template, :source,:template, :source, :outbox_count, :zf_id)
     end
 end
