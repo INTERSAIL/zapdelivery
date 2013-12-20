@@ -1,5 +1,5 @@
 <%= simple_form_for shallow_args(@department.customer, @department), :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :descrizione %>
+  <%= f.input :nome %>
   <%= f.input :stato %>
   <%= f.association :customer, label_method: :ragione_sociale, include_blank: false%>
   <div class="form-actions">

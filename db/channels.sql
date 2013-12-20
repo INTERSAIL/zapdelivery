@@ -1,0 +1,2 @@
+INSERT INTO channels (id, name, parameters, zf_id, created_at, updated_at) VALUES (1, 'Fax', 'askaslkdjlkasjdklasjd', '1001', '2013-12-11 16:50:00.407818', '2013-12-11 16:50:00.407818');
+INSERT INTO channels (id, name, parameters, zf_id, created_at, updated_at) VALUES (2, 'smtp', 'sadasds sad sad', '2002', '2013-12-11 16:50:30.974368', '2013-12-11 16:50:30.974368');

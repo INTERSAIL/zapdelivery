@@ -1,0 +1,12 @@
+<%= simple_form_for @inbox, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :mittente %>
+  <%= f.input :numero_protocollo %>
+  <%= f.input :numero_pagine %>
+  <%= f.input :allegato,  as: :file %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                inboxes_path, :class => 'btn' %>
+  </div>
+<% end %>

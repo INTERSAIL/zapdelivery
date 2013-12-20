@@ -1,16 +1,9 @@
 <%- model_class = Shipment -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <%=t '.title', :default => model_class.model_name.human.titleize %> : <span class="titolo"><%= @shipment.description %></span>   <%= fileAttachmentLinkView @shipment, :template %>  <%= fileAttachmentLinkView @shipment, :source %>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @shipment.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:template) %>:</strong></dt>
-  <dd><%= fileAttachmentLink @shipment, :template %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:source) %>:</strong></dt>
-  <dd><%= fileAttachmentLink @shipment, :source %></dd>
-</dl>
+
 
 <% unless @outboxes.nil?  %>
 
@@ -23,22 +16,20 @@
         <th><%= model_class.human_attribute_name(:data_invio) %></th>
         <th><%= model_class.human_attribute_name(:stato) %></th>
         <th><%= model_class.human_attribute_name(:data_stato) %></th>
-        <th><%= model_class.human_attribute_name(:risposta) %></th>
         <th><i class="icon-file"></i> <%= model_class.human_attribute_name(:allegato) %> </th>
 
       </tr>
       </thead>
       <tbody>
       <% @outboxes.each do |outbox| %>
-          <tr>
+          <tr class="stato_<%= outbox.stato_value %>">
             <td><%=l outbox.created_at %></td>
             <td><%= outbox.destinatario %></td>
             <td><%= link_to outbox.oggetto, outbox, remote: true %></td>
             <td><%=l outbox.data_invio, format: :long%></td>
             <td><%= outbox.stato_text %></td>
             <td><%=l outbox.data_stato %></td>
-            <td><%= outbox.risposta %></td>
-            <td><%= fileAttachmentLink outbox, :allegato %></td>
+            <td><%= fileAttachmentLinkView outbox, :allegato %></td>
 
           </tr>
       <% end %>

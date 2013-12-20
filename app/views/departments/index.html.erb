@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:descrizione) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:stato) %></th>
       <th><%= model_class.human_attribute_name(:customer_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -17,7 +17,7 @@
     <% @departments.each do |department| %>
       <tr>
         <td><%= link_to department.id, department_path(department) %></td>
-        <td><%= department.descrizione %></td>
+        <td><%= department.nome %></td>
         <td><%= department.stato %></td>
         <td><%= department.customer_id %></td>
         <td><%=l department.created_at %></td>

@@ -1,0 +1,56 @@
+it:
+  activerecord:
+    models:
+      shipment:
+        one: "Spedizione"
+        other: "Spedizioni"
+      account:
+        one: "Account"
+        other: "Accounts"
+      channel:
+        one: "Canale"
+        other: "Canali"
+      costumer:
+        one: "Costumer"
+        other: "Costumers"
+      department:
+        one: "Dipartimento"
+        other: "Dipartimenti"
+      outbox:
+        one: "Posta in uscita"
+        other: "Posta in uscita"
+      inbox:
+        one: "Posta in entrata"
+        other: "posta in entrata"
+      shipment:
+        one: "Spedizione"
+        other: "Spedizioni"
+      user:
+        one: "Utente"
+        other: "Utenti"
+    attributes:
+      shipment:
+        template: "Template"
+        description: "Descrizione"
+        source: "Sorgente"
+        account: "Account"
+        created_at: "Creato il"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      midlle: "%d/%m/%Y %H:%M"
+      long: "%d/%m/%Y %H:%M:%s"
+  helpers:
+    actions: "Azioni"
+    submit:
+      create: "Aggiungi %{model}"
+      update: "Salve i cambiamenti"
+    links:
+      new: 'Nuovo'
+      cancel: 'Cancella'
+      destroy: 'Elimina'
+      modify: 'Modifica'
+      back: "Indietro"
+    titles:
+      new: 'Crea %{model}'

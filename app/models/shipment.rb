@@ -5,7 +5,7 @@ class Shipment < ActiveRecord::Base
 
   has_many :outboxes
   belongs_to :user
-
+  belongs_to :account
 
   attr_attachment(:template , :source)
 

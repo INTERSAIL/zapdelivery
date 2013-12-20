@@ -71,6 +71,6 @@ class CustomersController < ApplicationController
     def customer_params
       params.require(:customer).permit(:ragione_sociale,
       :partita_iva, :codice_fiscale, :indirizzo, :data_attivazione, :stato,
-      department_attributes: [:descrizione, :stato, :id])
+      department_attributes: [:nome, :stato, :id])
     end
 end

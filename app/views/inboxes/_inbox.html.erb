@@ -1,0 +1,13 @@
+<%- model_class = Inbox -%>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:mittente) %>:</strong></dt>
+  <dd><%= @inbox.mittente %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_protocollo) %>:</strong></dt>
+  <dd><%= @inbox.numero_protocollo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_pagine) %>:</strong></dt>
+  <dd><%= @inbox.numero_pagine %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:allegato_xid) %>:</strong></dt>
+  <dd><%= fileAttachmentLinkView @inbox, :allegato %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_ricezione) %>:</strong></dt>
+  <dd><%= @inbox.data_ricezione %></dd>
+</dl>

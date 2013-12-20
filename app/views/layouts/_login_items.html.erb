@@ -3,9 +3,9 @@
 
   <ul class="nav">
     <li class="divider-vertical"></li>
-    <li class="active"><%= link_to "outbox", shipments_path %></li>
+    <li><%= link_to "outbox", shipments_url, id: "btn_shipments" %></li>
     <li class="divider-vertical"></li>
-    <li><%= link_to "Inbox"%></li>
+    <li><%= link_to "Inbox", inboxes_url, id: "btn_inboxes" %></li>
     <li class="divider-vertical"></li>
   </ul>
  <% end %>

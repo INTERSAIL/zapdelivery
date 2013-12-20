@@ -13,13 +13,14 @@
  *= require bootstrap-datepicker
  */
 
-/*
-div#logo { background-color: #ECF601 ;
-background-image: linear-gradient(to bottom, #ECF601, #ECF601);}
+#middleContainer h1 {
+    font-size: 20.5px;
+}
+#middleContainer h1,#middleContainer  h2,#middleContainer  h3 {
+    line-height: 0;
+}
 
 
-#logo, .navbar .container-fluid { background-color: #ECF601 ;}
-#logo a {margin:0;}*/
 #logo a {
     background-color: #ECF601;
     left: -20px;
@@ -29,6 +30,7 @@ background-image: linear-gradient(to bottom, #ECF601, #ECF601);}
     position: relative;
     border-bottom-right-radius:1em;
 }
+
 
 #topContainer  { margin-bottom: 1px; }
 #topContainer  { border-bottom:3px solid #ECF601 ;border-top:3px solid #ECF601
@@ -53,6 +55,10 @@ footer {
     z-index: 999;
 }
 
+#middleContainer .simbolo { width: 16px; height: 16px ;display: block;}
+.simbolo.icon-account-1  {background-image: url("/assets/fax.png"); background-repeat:no-repeat;}
+.simbolo.icon-account-2  { background-image: url("/assets/mail.png"); background-repeat:no-repeat; }
+
 
 #loading { position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1000; background-color: #ffffff;  opacity:0.6;
     filter:alpha(opacity=60); /* For IE8 and earlier */
@@ -60,5 +66,22 @@ footer {
     background-position: center center;
 }
 
-
+.stato_2 { background-color: #ffdfdc;}
 div.alert { margin: 0}
+.fullScreen.modal.fade.in { top:25px;}
+.fullScreen.modal {
+    /*
+    width: 80%;
+    margin-left:-40%;
+    height: 80%;
+    margin-left:-100px;    */
+    left: 25px; top:25px;
+    margin-left: 0;
+    margin-top:0;
+
+
+}
+.fullScreen.modal .modal-body {
+    max-height: none;
+
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211164714) do
+ActiveRecord::Schema.define(version: 20131219110810) do
 
   create_table "accounts", force: true do |t|
     t.string   "connection_string"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131211164714) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "channel_id"
+    t.string   "name"
   end
 
   create_table "active_admin_comments", force: true do |t|
@@ -81,11 +82,21 @@ ActiveRecord::Schema.define(version: 20131211164714) do
   end
 
   create_table "departments", force: true do |t|
-    t.string   "descrizione"
+    t.string   "name"
     t.integer  "stato"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
+  end
+
+  create_table "inboxes", force: true do |t|
+    t.string   "mittente"
+    t.string   "numero_protocollo"
+    t.integer  "numero_pagine"
+    t.string   "allegato_xid"
+    t.datetime "data_ricezione"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "outboxes", force: true do |t|
@@ -122,7 +133,7 @@ ActiveRecord::Schema.define(version: 20131211164714) do
     t.integer  "user_id"
     t.string   "template_xid"
     t.string   "source_xid"
-    t.integer  "zf_id"
+    t.integer  "account_id"
   end
 
   create_table "users", force: true do |t|

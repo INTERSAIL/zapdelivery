@@ -1,5 +1,12 @@
 Zapdelivery::Application.routes.draw do
 
+
+  match "/attachment/view" => "attachment#view", :as => 'attachment_view', :via => :get
+  match "/attachment/download" => "attachment#download", :as => 'attachment_download', :via => :get
+
+
+  resources :inboxes
+
   resources :shipments
 
   resources :assignments

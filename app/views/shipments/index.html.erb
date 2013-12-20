@@ -1,6 +1,6 @@
 <%- model_class = Shipment -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Outbox</h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -17,10 +17,10 @@
   <tbody>
     <% @shipments.each do |shipment| %>
       <tr>
-        <td><%= shipment.zf_id %></td>
+        <td><div data-toggle="tooltip" title="<%= shipment.account.name %>" class="simbolo icon-account-<%= shipment.account.channel_id %>"></div></td>
         <td><%= link_to shipment.description, shipment_path(shipment) %></td>
-        <td><%= fileAttachmentLink shipment, :template %></td>
-        <td><%= fileAttachmentLink shipment, :source %></td>
+        <td><%= fileAttachmentLinkView shipment, :template %><%= fileAttachmentLinkDownload shipment, :template %></td>
+        <td><%= fileAttachmentLinkView shipment, :source %><%= fileAttachmentLinkDownload shipment, :source %></td>
         <td><%=l shipment.created_at %></td>
       </tr>
     <% end %>

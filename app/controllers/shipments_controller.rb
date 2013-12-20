@@ -34,7 +34,7 @@ class ShipmentsController < ApplicationController
 
     respond_to do |format|
       if @shipment.save
-        format.html { redirect_to @shipment, notice: 'Shipment was successfully created.' }
+        format.html { redirect_to shipments_path, notice: 'Shipment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @shipment }
       else
         format.html { render action: 'new' }
@@ -75,6 +75,6 @@ class ShipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipment_params
-      params.require(:shipment).permit(:description, :user, :template, :source,:template, :source, :outbox_count, :zf_id)
+      params.require(:shipment).permit(:description, :user, :template, :source,:template, :source, :outbox_count, :account,:account_id)
     end
 end

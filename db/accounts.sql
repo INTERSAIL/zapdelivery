@@ -1,0 +1,3 @@
+INSERT INTO accounts (id, connection_string, customer_id, created_at, updated_at, channel_id, name) VALUES (1, 'hrth tyhghtr bbrtbfb t rtbrtbdfgtr', '', '2013-12-11 13:47:37.537193', '2013-12-18 17:00:31.558397', 1, 'Invio');
+INSERT INTO accounts (id, connection_string, customer_id, created_at, updated_at, channel_id, name) VALUES (2, 'sdasd asd fthyumnuthnfn', '', '2013-12-11 14:00:40.286441', '2013-12-18 17:00:14.355891', 2, 'Spedizione full');
+INSERT INTO accounts (id, connection_string, customer_id, created_at, updated_at, channel_id, name) VALUES (3, 'xzccnzcnxnnnzcvcnxnxvnnxvnxnnnv', '', '2013-12-12 15:34:46.779781', '2013-12-18 16:59:53.230693', 2, 'Spedizione standard');
