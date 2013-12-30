@@ -1,7 +1,7 @@
 <%= simple_form_for @shipment, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :description %>
-  <%= f.input :template , as: :file %>
-  <%= f.input :source,  as: :file %>
+  <%= f.input :templateStream , as: :file %>
+  <%= f.input :sourceStream,  as: :file %>
   <%= f.input :account_id, collection: current_user.accounts,value_method: lambda { |obj| obj.id },label_method: lambda { |obj| (obj.channel.name + ':' + obj.name) }, prompt: "Scegli un account..." %>
     <% # f.input :zf_id, collection: current_user.accounts.channel,label_method: :name, value_method: :zf_id, prompt: "Scegli un account..." %>
     <%# collection_select (:post,:zf_id, current_user.accounts, :zf_id, :connection_string,prompt: true) %>

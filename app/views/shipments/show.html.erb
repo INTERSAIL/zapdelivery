@@ -1,6 +1,6 @@
 <%- model_class = Shipment -%>
 <div class="page-header">
-  <%=t '.title', :default => model_class.model_name.human.titleize %> : <span class="titolo"><%= @shipment.description %></span>   <%= fileAttachmentLinkView @shipment, :template %>  <%= fileAttachmentLinkView @shipment, :source %>
+  <%=t '.title', :default => model_class.model_name.human.titleize %> : <span class="titolo"><%= @shipment.description %></span>   <%= fileAttachmentLinkView @shipment.template %>  <%= fileAttachmentLinkView @shipment.source %>
 </div>
 
 
@@ -29,7 +29,7 @@
             <td><%=l outbox.data_invio, format: :long%></td>
             <td><%= outbox.stato_text %></td>
             <td><%=l outbox.data_stato %></td>
-            <td><%= fileAttachmentLinkView outbox, :allegato %></td>
+            <td><%= fileAttachmentLinkView outbox.allegato %></td>
 
           </tr>
       <% end %>

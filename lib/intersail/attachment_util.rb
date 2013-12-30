@@ -3,13 +3,14 @@ module Intersail
     module  AttachmentUtil
 
       def saveStream(stream)
-           'allegato'
-      end
+          xid = Time.now.to_formatted_s(:nsec)
 
-      def getUrl(xid)
-          "#{xid}"
-      end
+          File.atomic_write("app/assets/pdf/#{xid}") do |f|
+            f.write(stream.tempfile.read)
+          end
 
+          Attachment.new(xid: xid, name: stream.original_filename, content_type: stream.content_type )
+      end
      end
   end
 end
@@ -21,14 +22,14 @@ class Class
     #iteriamo sulle chiavi
     args.each do |arg|
 
-      #getter
-      self.class_eval("def #{arg};logger.info 'getter #{arg}' + #{arg}_xid.to_s ;getUrl #{arg}_xid ;end")
-      #
+      #relation
+      self.class_eval("belongs_to :#{arg}, class_name: 'Attachment'")
       #setter
-      self.class_eval("def #{arg}=(val);logger.info 'setter #{arg}' + #{arg}_xid.to_s ; write_attribute( :#{arg}_xid , saveStream(val)); end")
-
-
+      self.class_eval("def #{arg}Stream=val; self.#{arg}=saveStream(val); end")
     end
+
+    #save
+    self.class_eval("def save; super && #{args.map{|v| v.to_s+'.save'}.join(' && ')}; end")
   end
 
 

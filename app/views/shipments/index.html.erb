@@ -19,8 +19,10 @@
       <tr>
         <td><div data-toggle="tooltip" title="<%= shipment.account.name %>" class="simbolo icon-account-<%= shipment.account.channel_id %>"></div></td>
         <td><%= link_to shipment.description, shipment_path(shipment) %></td>
-        <td><%= fileAttachmentLinkView shipment, :template %><%= fileAttachmentLinkDownload shipment, :template %></td>
-        <td><%= fileAttachmentLinkView shipment, :source %><%= fileAttachmentLinkDownload shipment, :source %></td>
+
+        <td><%= fileAttachmentLinkView shipment.template %><%= fileAttachmentLinkDownload shipment.template %></td>
+        <td><%= fileAttachmentLinkView shipment.source %><%= fileAttachmentLinkDownload shipment.source %></td>
+
         <td><%=l shipment.created_at %></td>
       </tr>
     <% end %>

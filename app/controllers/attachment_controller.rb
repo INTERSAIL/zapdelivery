@@ -3,26 +3,21 @@ class AttachmentController < ApplicationController
   before_filter :set_attachment
 
   def view
-
     render_modal('Documento', "attachment/embedded")
+  end
 
+  def inline
+    send_file( 'app/assets/pdf/'+@attachment.xid, content_type: @attachment.content_type, disposition: 'inline', filename: @attachment.name)
   end
 
   def download
-
-    send_file( 'app/assets/pdf/'+@nome_documento+'.pdf' ,type: 'application/pdf', disposition: 'attachment', filename: @nome_documento)
-
+    send_file( 'app/assets/pdf/'+@attachment.xid, content_type: @attachment.content_type, disposition: 'attachment', filename: @attachment.name)
   end
 
   private
 
   def set_attachment
-
-    @nome_documento = 'allegato'
-
-
-
-    @nome_documento = params[:format] if File.exists?('app/assets/pdf/'+params[:format]+'.pdf')
+    @attachment = Attachment.find(params[:id]) || Attachment.find(1)
   end
 
 end

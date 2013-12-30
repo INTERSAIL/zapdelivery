@@ -1,8 +1,9 @@
 Zapdelivery::Application.routes.draw do
 
 
-  match "/attachment/view" => "attachment#view", :as => 'attachment_view', :via => :get
-  match "/attachment/download" => "attachment#download", :as => 'attachment_download', :via => :get
+  match "/attachment/view/:id" => "attachment#view", :as => 'attachment_view', :via => :get
+  match "/attachment/render/:id" => "attachment#inline", :as => 'attachment_render', :via => :get
+  match "/attachment/download/:id" => "attachment#download", :as => 'attachment_download', :via => :get
 
 
   resources :inboxes

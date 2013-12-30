@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131219110810) do
+ActiveRecord::Schema.define(version: 20131230165010) do
 
   create_table "accounts", force: true do |t|
     t.string   "connection_string"
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20131219110810) do
     t.datetime "updated_at"
   end
 
+  create_table "attachments", force: true do |t|
+    t.string   "xid"
+    t.string   "name"
+    t.string   "content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "channels", force: true do |t|
     t.string   "name"
     t.string   "parameters"
@@ -93,17 +101,16 @@ ActiveRecord::Schema.define(version: 20131219110810) do
     t.string   "mittente"
     t.string   "numero_protocollo"
     t.integer  "numero_pagine"
-    t.string   "allegato_xid"
     t.datetime "data_ricezione"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "allegato_id"
   end
 
   create_table "outboxes", force: true do |t|
     t.string   "destinatario"
     t.string   "oggetto"
     t.text     "messaggio"
-    t.binary   "allegato_xid"
     t.datetime "data_invio"
     t.integer  "stato"
     t.datetime "data_stato"
@@ -111,6 +118,7 @@ ActiveRecord::Schema.define(version: 20131219110810) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "shipment_id"
+    t.integer  "allegato_id"
   end
 
   create_table "rails_admin_histories", force: true do |t|
@@ -131,9 +139,9 @@ ActiveRecord::Schema.define(version: 20131219110810) do
     t.datetime "updated_at"
     t.string   "description"
     t.integer  "user_id"
-    t.string   "template_xid"
-    t.string   "source_xid"
     t.integer  "account_id"
+    t.integer  "source_id",   limit: 255
+    t.integer  "template_id", limit: 255
   end
 
   create_table "users", force: true do |t|

@@ -30,7 +30,6 @@ class ShipmentsController < ApplicationController
     @shipment = Shipment.new(shipment_params)
 
     @shipment.user = current_user
-    b = @shipment.template_xid
 
     respond_to do |format|
       if @shipment.save
@@ -75,6 +74,6 @@ class ShipmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipment_params
-      params.require(:shipment).permit(:description, :user, :template, :source,:template, :source, :outbox_count, :account,:account_id)
+      params.require(:shipment).permit(:description, :user, :templateStream, :sourceStream, :outbox_count, :account,:account_id)
     end
 end

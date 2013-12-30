@@ -1,6 +1,6 @@
 <embed
-type="application/pdf"
-src="http://localhost:3000/assets/<%=  @nome_documento %>.pdf"
+type="<%= @attachment.content_type %>"
+src=<%= attachment_render_path(@attachment) %>
 id="fullScreenModal"
 width="100%"
 height="100%"

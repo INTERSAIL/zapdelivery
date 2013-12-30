@@ -21,7 +21,7 @@
         <td><%= inbox.mittente %></td>
         <td><%= inbox.numero_protocollo %></td>
         <td><%= inbox.numero_pagine %></td>
-        <td><%= fileAttachmentLinkView inbox, :allegato %></td>
+        <td><%= fileAttachmentLinkView inbox.allegato %></td>
         <td><%= l inbox.data_ricezione, format: :midlle %></td>
         <td>
           <%= link_to 'Dettagli', inbox, remote: true , :class => 'btn btn-mini' %>

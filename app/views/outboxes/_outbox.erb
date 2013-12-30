@@ -8,7 +8,7 @@
   <dt><strong><%= model_class.human_attribute_name(:messaggio) %>:</strong></dt>
   <dd><%= @outbox.messaggio %></dd>
   <dt><strong><%= model_class.human_attribute_name(:allegato) %>:</strong></dt>
-  <dd><%= fileAttachmentLinkView @outbox, :allegato %>
+  <dd><%= fileAttachmentLinkView @outbox.allegato %>
   <dt><strong><%= model_class.human_attribute_name(:data_invio) %>:</strong></dt>
   <dd><%= @outbox.data_invio %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stato) %>:</strong></dt>

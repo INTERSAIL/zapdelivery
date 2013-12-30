@@ -9,29 +9,18 @@ class Shipment < ActiveRecord::Base
 
   attr_attachment(:template , :source)
 
-
-=begin
-  def template
-     getUrl template_xid
-  end
-
-  def template=templateStream
-    write_attribute(:template_xid , saveStream(templateStream))
-  end
-
-  def source
-    getUrl source_xid
-  end
-
-  def source=val
-    write_attribute(:source_xid , saveStream(val))
-  end
-=end
-
-
-
-
-
+  #belongs_to :template, class_name: "Attachment"
+  #belongs_to :source, class_name: "Attachment"
+  #
+  #def templateStream=val
+  #  self.template = saveStream(val)
+  #end
+  #def sourceStream=val
+  #  self.source = saveStream(val)
+  #end
+  #def save
+  #  super && self.template.save && self.source.save
+  #end
 
   def outbox_count
     self.outboxes.count
