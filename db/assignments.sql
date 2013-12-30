@@ -1,0 +1,3 @@
+INSERT INTO assignments (id, user_id, account_id, created_at, updated_at) VALUES (1, 1, 1, '2013-12-11 13:47:48.095205', '2013-12-11 13:47:48.095205');
+INSERT INTO assignments (id, user_id, account_id, created_at, updated_at) VALUES (2, 1, 2, '2013-12-11 14:01:31.799025', '2013-12-11 14:01:31.799025');
+INSERT INTO assignments (id, user_id, account_id, created_at, updated_at) VALUES (3, 1, 3, '2013-12-12 15:35:15.899069', '2013-12-12 15:35:15.899069');

@@ -1,0 +1,1 @@
+INSERT INTO departments (id, name, stato, created_at, updated_at, customer_id) VALUES (1, 'Dipartimento di esempio', 1, '2013-12-13 09:01:21.060005', '2013-12-13 09:01:21.060005', null);
