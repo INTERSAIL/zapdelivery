@@ -2,10 +2,20 @@ module Intersail
   module Util
     module  AttachmentUtil
 
+      def self.destination_path
+        Rails.root.join('app','assets','pdf')
+      end
+
+      def getUrl(attachment)
+        AttachmentUtil.destination_path.join("#{attachment.xid}").to_s
+      end
+
       def saveStream(stream)
           xid = Time.now.to_formatted_s(:nsec)
 
-          File.atomic_write("app/assets/pdf/#{xid}") do |f|
+          path = AttachmentUtil.destination_path.join("#{xid}") .to_s
+
+          File.atomic_write(path) do |f|
             f.write(stream.tempfile.read)
           end
 

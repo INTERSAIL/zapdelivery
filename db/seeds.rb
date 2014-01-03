@@ -102,7 +102,7 @@ Shipment.create!([
   {description: "pppppp", user_id: 1, account_id: 2, source_id: 20, template_id: 19},
   {description: "xxxxxx", user_id: 1, account_id: 2, source_id: 22, template_id: 21}
 ])
-Admin.create!([
-  {email: "alessandro2.fornasari@intersail.it", encrypted_password: "$2a$10$xFTojkR5kmibDuE0HNxt2.s0e3s.HDEZw9fjxbfbPPza8kFXwivN2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 8, current_sign_in_at: "2013-12-30 14:19:30", last_sign_in_at: "2013-10-28 09:17:48", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", name: "Alessandro"},
-  {email: "federica.santicoli@intersail.it", encrypted_password: "$2a$10$ypukdLrmMwL2XTSv0/yOXe9pF1Aq4KfSPcNGsPPIf4FPF73wo.PPC", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-10-21 14:41:03", last_sign_in_at: "2013-10-15 07:59:06", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", name: "Fede"}
-])
+#Admin.create!([
+#  {email: "alessandro2.fornasari@intersail.it", encrypted_password: "$2a$10$xFTojkR5kmibDuE0HNxt2.s0e3s.HDEZw9fjxbfbPPza8kFXwivN2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 8, current_sign_in_at: "2013-12-30 14:19:30", last_sign_in_at: "2013-10-28 09:17:48", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", name: "Alessandro"},
+#  {email: "federica.santicoli@intersail.it", encrypted_password: "$2a$10$ypukdLrmMwL2XTSv0/yOXe9pF1Aq4KfSPcNGsPPIf4FPF73wo.PPC", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-10-21 14:41:03", last_sign_in_at: "2013-10-15 07:59:06", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", name: "Fede"}
+#])

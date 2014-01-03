@@ -7,11 +7,11 @@ class AttachmentController < ApplicationController
   end
 
   def inline
-    send_file( 'app/assets/pdf/'+@attachment.xid, content_type: @attachment.content_type, disposition: 'inline', filename: @attachment.name)
+    send_file( @attachment.url, content_type: @attachment.content_type, disposition: 'inline', filename: @attachment.name)
   end
 
   def download
-    send_file( 'app/assets/pdf/'+@attachment.xid, content_type: @attachment.content_type, disposition: 'attachment', filename: @attachment.name)
+    send_file( @attachment.url, content_type: @attachment.content_type, disposition: 'attachment', filename: @attachment.name)
   end
 
   private
