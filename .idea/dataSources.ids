@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails zapdelivery: development" uuid="b0b33e77-b426-4f59-abbf-d56ba77a3ff4">
-    <database-info product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
-    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+  <data-source source="LOCAL" name="Rails zapdelivery: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="186fc9a4-f908-4f32-a52e-de520613e867">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/production.sqlite3</jdbc-url>
+    <libraries/>
     <schema name="" catalog=""/>
     <table name="accounts" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -172,9 +173,29 @@
       <index name="index_users_on_email" unique="true" columns="email"/>
     </table>
   </data-source>
-  <data-source source="LOCAL" name="Rails zapdelivery: production" uuid="186fc9a4-f908-4f32-a52e-de520613e867">
-    <database-info product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
-    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+  <data-source source="LOCAL" name="Rails zapdelivery: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="a37e6e8d-0b39-4ec3-9894-5936e07479e1">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>jar://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar!/</url>
+      </library>
+    </libraries>
+  </data-source>
+  <data-source source="LOCAL" name="Rails zapdelivery: development" product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="ff71c7f3-3f59-4959-9d4d-49e22573cb90">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>jar://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar!/</url>
+      </library>
+    </libraries>
     <schema name="" catalog=""/>
     <table name="accounts" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -298,8 +319,8 @@
       <column name="username" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="item" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="table" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
-      <column name="month" sqlType="INTEGER(2)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
-      <column name="year" sqlType="INTEGER(5)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="month" sqlType="INTEGER(2)" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="year" sqlType="INTEGER(5)" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
@@ -316,8 +337,8 @@
       <column name="description" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="account_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
-      <column name="source_id" sqlType="INTEGER(255)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
-      <column name="template_id" sqlType="INTEGER(255)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="source_id" sqlType="INTEGER(255)" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="template_id" sqlType="INTEGER(255)" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <primary-key columns="id"/>
     </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
@@ -343,9 +364,5 @@
       <index name="index_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
       <index name="index_users_on_email" unique="true" columns="email"/>
     </table>
-  </data-source>
-  <data-source source="LOCAL" name="Rails zapdelivery: test" uuid="5d3bf222-a13a-48a3-9167-59f6648619d0">
-    <database-info product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
-    <schema name="" catalog=""/>
   </data-source>
 </component>
