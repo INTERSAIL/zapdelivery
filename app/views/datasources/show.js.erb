@@ -1,0 +1,10 @@
+
+$modal = $('#appModal'),
+        $modalBody = $('#appModal .modal-body'),
+        $modalHeading = $('#appModal .modal-heading');
+
+$modalHeading.html("Sorgente dati - [<%= @attachment.name %>]");
+
+$modalBody.html("<%= j render('datasource', datasource: @attachment.datasource) %>");
+
+$modal.modal();

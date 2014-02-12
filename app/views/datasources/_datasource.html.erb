@@ -1,0 +1,18 @@
+<table class="table table-striped" width="100%">
+
+  <tr>
+    <% datasource.headers.each do |h| %>
+        <th><%= h %></th>
+    <% end %>
+  </tr>
+
+
+  <% datasource.data.each do |d| %>
+      <tr>
+        <% d.fields.each do |v| %>
+            <td><%= v %></td>
+        <% end %>
+      </tr>
+  <% end %>
+
+</table>

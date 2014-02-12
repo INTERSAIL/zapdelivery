@@ -10,9 +10,9 @@ it:
       channel:
         one: "Canale"
         other: "Canali"
-      costumer:
-        one: "Costumer"
-        other: "Costumers"
+      customer:
+        one: "Cliente"
+        other: "Clienti"
       department:
         one: "Dipartimento"
         other: "Dipartimenti"
@@ -20,19 +20,16 @@ it:
         one: "Posta in uscita"
         other: "Posta in uscita"
       inbox:
-        one: "Posta in entrata"
-        other: "posta in entrata"
-      shipment:
-        one: "Spedizione"
-        other: "Spedizioni"
+        one: "Invio"
+        other: "Invii"
       user:
         one: "Utente"
         other: "Utenti"
     attributes:
       shipment:
-        template: "Template"
+        templateStream: "Modello"
+        sourceStream: "Dati"
         description: "Descrizione"
-        source: "Sorgente"
         account: "Account"
         created_at: "Creato il"
 

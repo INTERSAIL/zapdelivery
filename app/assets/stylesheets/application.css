@@ -85,3 +85,33 @@ div.alert { margin: 0}
     max-height: none;
 
 }
+
+
+.table-fixed-header-container {
+    position:relative;
+    height:800px;
+    padding-top:30px;
+    margin-bottom: 10px;
+}
+
+.table-fixed-header-inner {
+    overflow:auto;
+    height:100%;
+}
+
+.table-fixed-header-inner table {
+    overflow: auto;
+}
+
+.table-fixed-header-inner th {
+    padding: 0 5px !important;
+}
+
+.table-fixed-header-inner th > div {
+    position:absolute;
+    top:0;
+}
+
+.modal {
+    width: 100%;
+}

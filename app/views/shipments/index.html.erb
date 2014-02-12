@@ -1,16 +1,18 @@
 <%- model_class = Shipment -%>
 <div class="page-header">
-  <h1>Outbox</h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
+<%= table_fixed do %>
 <table class="table table-striped">
   <thead>
     <tr>
 
-      <th>Tipo</th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><i class="icon-file"></i> <%= model_class.human_attribute_name(:template) %></th>
-      <th><i class="icon-file"></i> <%= model_class.human_attribute_name(:source) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th style="min-width: 40px"><%= d 'Tipo'%></th>
+      <th><%= d model_class.human_attribute_name(:description) %></th>
+      <th><%= d do %><i class="icon-file"></i> <%= model_class.human_attribute_name(:template) %><% end %></th>
+      <th><%= d do %><i class="icon-file"></i> <%= model_class.human_attribute_name(:source) %><% end %></th>
+      <th><%= d model_class.human_attribute_name(:created_at) %></th>
 
     </tr>
   </thead>
@@ -21,13 +23,14 @@
         <td><%= link_to shipment.description, shipment_path(shipment) %></td>
 
         <td><%= fileAttachmentLinkView shipment.template %><%= fileAttachmentLinkDownload shipment.template %></td>
-        <td><%= fileAttachmentLinkView shipment.source %><%= fileAttachmentLinkDownload shipment.source %></td>
+        <td><%= fileAttachmentLinkView shipment.source %><%= fileAttachmentLinkDownload shipment.source %><%= link_to 'View', datasource_show_path(shipment.source), remote: true %></td>
 
         <td><%=l shipment.created_at %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_shipment_path,

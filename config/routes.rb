@@ -1,5 +1,9 @@
 Zapdelivery::Application.routes.draw do
 
+  root 'shipments#index'
+
+  match '/datasources/show/:id' => 'datasources#show', as: 'datasource_show', via: :get
+
 
   match "/attachment/view/:id" => "attachment#view", :as => 'attachment_view', :via => :get
   match "/attachment/render/:id" => "attachment#inline", :as => 'attachment_render', :via => :get

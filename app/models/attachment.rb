@@ -6,4 +6,8 @@ class Attachment < ActiveRecord::Base
   def url
     getUrl(self)
   end
+
+  def datasource
+    Datasource.new(self.url)
+  end
 end

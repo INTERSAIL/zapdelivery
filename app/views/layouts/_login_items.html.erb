@@ -3,9 +3,9 @@
 
   <ul class="nav">
     <li class="divider-vertical"></li>
-    <li><%= link_to "outbox", shipments_url, id: "btn_shipments" %></li>
+    <li><%= link_to "Ricezioni", inboxes_url, id: "btn_inboxes" %></li>
     <li class="divider-vertical"></li>
-    <li><%= link_to "Inbox", inboxes_url, id: "btn_inboxes" %></li>
+    <li><%= link_to "Invii", shipments_url, id: "btn_shipments" %></li>
     <li class="divider-vertical"></li>
   </ul>
  <% end %>
@@ -14,6 +14,8 @@
   <ul class="nav last">
     <% if user_signed_in? %>
 
+        <li><%= link_to "Amministrazione", '#', id: "btn_admin" %></li>
+        <li class="divider-vertical"></li>
 
     <li class="">
       <%= link_to  edit_user_registration_path do %>
@@ -22,7 +24,7 @@
     </li>
     <li class="">
       <%= link_to  destroy_user_session_path, :method => :delete do %>
-          <i class="icon-off"></i> Esci
+          <i class="icon-off"></i>
       <% end %>
     </li>
 

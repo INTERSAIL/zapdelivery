@@ -2,17 +2,19 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
+<%= table_fixed do %>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%= model_class.human_attribute_name(:destinatario) %></th>
-      <th><%= model_class.human_attribute_name(:oggetto) %></th>
-      <th><%= model_class.human_attribute_name(:data_invio) %></th>
-      <th><%= model_class.human_attribute_name(:stato) %></th>
-      <th><%= model_class.human_attribute_name(:data_stato) %></th>
-      <th><%= model_class.human_attribute_name(:risposta) %></th>
-      <th><%= model_class.human_attribute_name(:allegato) %></th>
+      <th><%= d model_class.human_attribute_name(:created_at) %></th>
+      <th><%= d model_class.human_attribute_name(:destinatario) %></th>
+      <th><%= d model_class.human_attribute_name(:oggetto) %></th>
+      <th><%= d model_class.human_attribute_name(:data_invio) %></th>
+      <th><%= d model_class.human_attribute_name(:stato) %></th>
+      <th><%= d model_class.human_attribute_name(:data_stato) %></th>
+      <th><%= d model_class.human_attribute_name(:risposta) %></th>
+      <th><%= d model_class.human_attribute_name(:allegato) %></th>
 
     </tr>
   </thead>
@@ -26,12 +28,14 @@
         <td><%= outbox.stato_text %></td>
         <td><%=l outbox.data_stato %></td>
         <td><%= outbox.risposta %></td>
-        <td><%= outbox.allegato %></td>
+        <td><%= fileAttachmentLinkView outbox.allegato %></td>
 
       </tr>
     <% end %>
   </tbody>
 </table>
+<% end %>
+
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_outbox_path,

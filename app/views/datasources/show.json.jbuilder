@@ -1,0 +1,1 @@
+json.(@attachment.datasource,:headers,:data)
