@@ -26,7 +26,7 @@ $(document).ready(function(){
     $('#btn_'+nome_classe).parent().addClass("active");
 
 
-    $(window).resize(function() {
+   /* $(window).resize(function() {
         if(this.resizeTO) clearTimeout(this.resizeTO);
         this.resizeTO = setTimeout(function() {
             $(this).trigger('windowResize');
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     $(window).on('windowResize', function() {
 
-        var contenitore =    $("#fullScreenModal").parent();
+        var contenitore =  $("#fullScreenModal").parent();
 
         if(contenitore.length > 0) {
             var altezzaFinestra =  $(window).height();
@@ -55,7 +55,7 @@ $(document).ready(function(){
                 });
             contenitore.parent().addClass('fullScreen');
 
-           /* contenitore.css(
+           *//* contenitore.css(
             {
                 "height": (altezzaFinestra - 200)+"px",
                 "width": (larghezzaFinestra - 200)+"px",
@@ -69,11 +69,11 @@ $(document).ready(function(){
                 "top":"25px",
                 "margin-left": "0",
                 "margin-top":"0"
-            });  */
+            });  *//*
 
         } else {
 
-            contenitore =    $(".modal .modal-body");
+            contenitore =    $(".modal-body");
 
             contenitore.attr(
                 {
@@ -88,6 +88,6 @@ $(document).ready(function(){
             contenitore.parent().removeClass('fullScreen');
         }
 
-    });
+    });*/
 
 });
