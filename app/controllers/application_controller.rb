@@ -9,8 +9,9 @@ class ApplicationController < ActionController::Base
     params[:customer_id]
   end
 
-  def render_modal( titolo, partial)
-      render :partial => 'layouts/show', locals: {:titolo => titolo, :corpo =>  partial }
+  def render_modal( titolo, partial, after = nil)
+      tpl = "#{params[:controller]}/#{params[:action]}"
+      render :partial => 'layouts/show', locals: {:titolo => titolo, :corpo =>  partial, after: template_exists?(tpl) ? tpl : nil }
   end
 
   protected

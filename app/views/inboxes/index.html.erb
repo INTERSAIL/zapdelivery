@@ -2,8 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<%= table_fixed do %>
-<table class="table table-striped">
+
+<table class="table table-striped" id="mainTable">
   <thead>
     <tr>
       <th><%= d model_class.human_attribute_name(:mittente) %></th>
@@ -37,4 +37,4 @@
     <% end %>
   </tbody>
 </table>
-<% end %>
+

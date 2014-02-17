@@ -1,10 +1,14 @@
-$modal = $('#appModal'),
-$modalBody = $('#appModal .modal-body'),
-$modalHeading = $('#appModal .modal-heading');
+$modal = $('#appModal');
+$modalDialog = $('#appModal .modal-dialog');
+$modalBody = $('#appModal .modal-body');
+$modalHeader = $('#appModal .modal-header');
+$modalTitle = $('#appModal .modal-title');
 
-$modalHeading.html("<%= titolo %>");
+$modalTitle.html("<%= titolo %>");
 
 $modalBody.html("<%= j render corpo  %>");
 
 $modal.modal();
-$(window).trigger('windowResize');
+
+<%= render template:after unless after.nil? %>
+

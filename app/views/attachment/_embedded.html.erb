@@ -1,9 +1,1 @@
-<embed
-type="<%= @attachment.content_type %>"
-src=<%= attachment_render_path(@attachment) %>
-id="fullScreenModal"
-width="100%"
-height="100%"
-id="documentPdf"
->
-</embed>
+<embed type="<%= @attachment.content_type %>" src="<%= attachment_render_path(@attachment) %>" class="fullScreenModal" id="documentPdf"></embed>
