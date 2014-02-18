@@ -20,8 +20,8 @@ it:
         one: "Posta in uscita"
         other: "Posta in uscita"
       inbox:
-        one: "Invio"
-        other: "Invii"
+        one: "Ricezione"
+        other: "Ricezioni"
       user:
         one: "Utente"
         other: "Utenti"
@@ -32,6 +32,13 @@ it:
         description: "Descrizione"
         account: "Account"
         created_at: "Creato il"
+
+  shipments:
+    index:
+      title: 'Invii'
+  inboxes:
+    index:
+      title: 'Ricezioni'
 
   time:
     formats:

@@ -31,6 +31,12 @@ class ShipmentsController < ApplicationController
 
     @shipment.user = current_user
 
+    ds = @shipment.source.datasource
+    ds.data.each do |row|
+      o = @shipment.outboxes.build(destinatario:row.field('DESTINATARIO'), oggetto:@shipment.description, messaggio:'Testo del messaggio', stato: :PRONTO_PER_INVIO, data_stato:Time.now)
+      o.allegato = o.saveStream(File.open(@shipment.getUrl(@shipment.template)), {name: @shipment.template.name, content_type: @shipment.template.content_type})
+    end
+
     respond_to do |format|
       if @shipment.save
         format.html { redirect_to shipments_path, notice: 'Shipment was successfully created.' }

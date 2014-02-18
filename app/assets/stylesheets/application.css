@@ -13,6 +13,7 @@
  *= require bootstrap_and_overrides
  *= require jquery.dataTables
  *= require modal
+ *= require common
  */
 
 #middleContainer h1 {
@@ -68,7 +69,7 @@ footer {
     background-position: center center;
 }
 
-.stato_2 { background-color: #ffdfdc;}
+.stato_90 { background-color: #ffdfdc !important;}
 div.alert { margin: 0}
 
 .table-fixed-header-container {
@@ -94,4 +95,12 @@ div.alert { margin: 0}
 .table-fixed-header-inner th > div {
     position:absolute;
     top:0;
+}
+
+.progress {
+    width: 100%;
+}
+.progress-bar {
+    float: left;
+    display: inline-block;
 }

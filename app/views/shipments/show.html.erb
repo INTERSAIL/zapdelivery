@@ -26,7 +26,11 @@
             <td><%=l outbox.created_at %></td>
             <td><%= outbox.destinatario %></td>
             <td><%= link_to outbox.oggetto, outbox, remote: true %></td>
-            <td><%=l outbox.data_invio, format: :long%></td>
+            <td><%=if outbox.data_invio?
+                     l outbox.data_invio, format: :long
+            else
+            '---'
+            end%></td>
             <td><%= outbox.stato_text %></td>
             <td><%=l outbox.data_stato %></td>
             <td><%= fileAttachmentLinkView outbox.allegato %></td>

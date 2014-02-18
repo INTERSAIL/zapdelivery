@@ -3,9 +3,9 @@
 
   <ul class="nav">
     <li class="divider-vertical"></li>
-    <li><%= link_to "Ricezioni", inboxes_url, id: "btn_inboxes" %></li>
+    <li><%= link_to t('inboxes.index.title'), inboxes_url, id: "btn_inboxes" %></li>
     <li class="divider-vertical"></li>
-    <li><%= link_to "Invii", shipments_url, id: "btn_shipments" %></li>
+    <li><%= link_to t('shipments.index.title'), shipments_url, id: "btn_shipments" %></li>
     <li class="divider-vertical"></li>
   </ul>
  <% end %>

@@ -1,0 +1,56 @@
+
+$col1: #d9e3e3;
+$col2: #90faed;
+$col3: #6cfa81;
+$col4: #dd514c;
+
+$col1a: lighten($col1, 10%);
+$col1b: darken($col1, 10%);
+
+$col2a: lighten($col2, 10%);
+$col2b: darken($col2, 10%);
+
+$col3a: lighten($col3, 10%);
+$col3b: darken($col3, 10%);
+
+
+$col4a: lighten($col4, 10%);
+$col4b: darken($col4, 10%);
+
+
+
+.PRONTO_PER_INVIO {
+  background-color: $col1 !important;
+  background-image: -moz-linear-gradient(top, $col1a, $col1b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col1a), to($col1b)) !important;
+  background-image: -webkit-linear-gradient(top, $col1a, $col1b) !important;
+  background-image: -o-linear-gradient(top, $col1a, $col1b) !important;
+  background-image: linear-gradient(to bottom, $col1a, $col1b) !important;
+}
+
+.INVIATO {
+  background-color: $col2 !important;
+  background-image: -moz-linear-gradient(top, $col2a, $col2b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col2a), to($col2b)) !important;
+  background-image: -webkit-linear-gradient(top, $col2a, $col2b) !important;
+  background-image: -o-linear-gradient(top, $col2a, $col2b) !important;
+  background-image: linear-gradient(to bottom, $col2a, $col2b) !important;
+}
+
+.CONSEGNATO {
+  background-color: $col3 !important;
+  background-image: -moz-linear-gradient(top, $col3a, $col3b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col3a), to($col3b)) !important;
+  background-image: -webkit-linear-gradient(top, $col3a, $col3b) !important;
+  background-image: -o-linear-gradient(top, $col3a, $col3b) !important;
+  background-image: linear-gradient(to bottom, $col3a, $col3b) !important;
+}
+
+.ERRORE {
+  background-color: $col4 !important;
+  background-image: -moz-linear-gradient(top, $col4a, $col4b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col4a), to($col4b)) !important;
+  background-image: -webkit-linear-gradient(top, $col4a, $col4b) !important;
+  background-image: -o-linear-gradient(top, $col4a, $col4b) !important;
+  background-image: linear-gradient(to bottom, $col4a, $col4b) !important;
+}

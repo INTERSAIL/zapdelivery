@@ -10,4 +10,5 @@ class Attachment < ActiveRecord::Base
   def datasource
     Datasource.new(self.url)
   end
+
 end

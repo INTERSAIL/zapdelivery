@@ -29,6 +29,26 @@ module ApplicationHelper
     end
   end
 
+  def progressBar(shipment)
+
+      tot = shipment.outboxes.count
+
+    html = ''
+      Outbox.stato.values.each do |status|
+        next if status == 'UNDEFINED'
+        v = shipment.outboxes.having_status(status.to_s).count
+        k = status
+        w = tot==0 ? 0 : (10000 * v) / (100 * tot)
+        html = html + content_tag(:div, class: "progress-bar #{k}", style: "width: #{w}%", title:"#{k.humanize}:#{v} su #{tot}" ) do
+          content_tag(:span, "#{v}".html_safe, class:'sr-only')
+        end
+      end
+
+      html
+
+      content_tag(:div,html.html_safe,class:'progress')
+  end
+
 
   def div(arg = nil)
     if block_given?
