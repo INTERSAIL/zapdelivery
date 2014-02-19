@@ -9,8 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap-datepicker
  *= require bootstrap_and_overrides
+ *= require bootstrap-datepicker
  *= require jquery.dataTables
  *= require modal
  *= require common
@@ -96,6 +96,7 @@ div.alert { margin: 0}
     position:absolute;
     top:0;
 }
+
 
 .progress {
     width: 100%;

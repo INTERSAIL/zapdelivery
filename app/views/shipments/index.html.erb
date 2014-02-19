@@ -23,23 +23,10 @@
         <td><div data-toggle="tooltip" title="<%= shipment.account.name %>" class="simbolo icon-account-<%= shipment.account.channel_id %>"></div></td>
         <td><%= link_to shipment.description, shipment_path(shipment) %></td>
 
-        <td><%= fileAttachmentLinkView shipment.template %><%= fileAttachmentLinkDownload shipment.template %></td>
-        <td><%= fileAttachmentLinkView shipment.source %><%= fileAttachmentLinkDownload shipment.source %><%= link_to 'View', datasource_show_path(shipment.source), remote: true %></td>
+        <td><%= attachmentLink shipment.template, ['View', 'Download'] %></td>
+        <td><%= attachmentLink shipment.source, ['Table', 'View', 'Download'] %></td>
 
-        <td><!--<div class="progress">
-          <div class="progress-bar PRONTO_PER_INVIO" style="width: 20%">
-            <span class="sr-only">4 pronti per invio</span>
-          </div>
-          <div class="progress-bar INVIATO" style="width: 35%">
-            <span class="sr-only">7 inviato</span>
-          </div>
-          <div class="progress-bar CONSEGNATO" style="width: 10%">
-            <span class="sr-only">2 errore</span>
-          </div>
-          <div class="progress-bar ERRORE" style="width: 10%">
-            <span class="sr-only">2 consegnato</span>
-          </div>
-        </div>--><%= progressBar shipment %></td>
+        <td><%= progressBar shipment %></td>
 
         <td><%=l shipment.created_at %></td>
       </tr>

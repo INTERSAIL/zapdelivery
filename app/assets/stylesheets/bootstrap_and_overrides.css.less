@@ -1,7 +1,4 @@
 @import "twitter/bootstrap/bootstrap";
-
-body {padding-top: 0px};
-
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -32,6 +29,8 @@ body {padding-top: 0px};
 // Example:
 // @linkColor: #ff0000;
 
+body {padding-top: 0px};
+
 @grey: rgba(217, 213, 221, 0.70);
 @linkColor: #1C18E0;
 
@@ -42,40 +41,6 @@ body {padding-top: 0px};
 @btnPrimaryBackground: @linkColor;
 @btnPrimaryBackgroundHighlight: darken(@linkColor, 5%);
 
- /*
-
-@black: #0a090a;
-@dark: #1c131a;
-@white: #efd2e6;
-@purple: #660098;
-@brown: #783f29;
-@blue: #1530d4;
-@red: #A30F5B;
-
-@bodyBackground: @dark;
-@textColor: @white;
-@linkColor: lighten(@purple, 10%);
-@linkColorHover: @purple;
-
-@btnPrimaryBackground: @linkColor;
-@btnPrimaryBackgroundHighlight: darken(@linkColor, 20%);
-@btnDangerBackground: @red;
-@btnDangerBackgroundHighlight: darken(@red, 20%);
-
-
-@navbarBackground: @blue;
-@navbarBackgroundHighlight: lighten(@blue, 10%);
-@navbarText: @black;
-@navbarBrandColor: @black;
-@navbarLinkColor: @black;
-@navbarLinkColorHover: @purple;
-@navbarLinkColorActive: @black;
-@navbarLinkBackgroundHover: saturate(@blue, 3%);
-@navbarLinkBackgroundActive: @blue;
-
-@tableBackground: @dark;
-@tableBackgroundAccent: lighten(@dark, 3%);
-@tableBackgroundHover: darken(@blue, 35%); //darken(@purple, 20%);
-@tableBorder: lighten(@dark, 5%);
-
-        */
+.progress {
+  margin-bottom: 0;
+}

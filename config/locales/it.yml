@@ -1,4 +1,6 @@
 it:
+  view: 'Vedi'
+
   activerecord:
     models:
       shipment:

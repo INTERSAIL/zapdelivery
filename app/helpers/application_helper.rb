@@ -16,6 +16,14 @@ module ApplicationHelper
 
   end
 
+  def fileAttachmentLinkTable(attachment)
+    return '-' if attachment.nil?
+
+    link_to(datasource_show_path(attachment), remote: true, class: 'present btn btn-small', title: attachment.name) do
+      content_tag(:i, '', class: 'icon-table icon-white')
+    end
+  end
+
 
   #gestise l'html dei campi definiti come attachment
   def fileAttachmentLinkDownload (attachment)
@@ -29,6 +37,37 @@ module ApplicationHelper
     end
   end
 
+  def html_concat(*items)
+    items.join.html_safe
+  end
+
+  def ul(items, options=[])
+    items.map! { |i| content_tag(:li, i) }
+
+    content_tag(:ul, options) do
+      html_concat(items)
+    end
+  end
+
+  def attachmentLink(attachment, linkTypes)
+    return '-' if attachment.nil?
+
+    linkTypes.map! { |l| send("fileAttachmentLink#{l}", attachment) }
+
+    content_tag(:div, class: 'btn-group') do
+      html_concat(
+          link_to(href: '#', class: 'btn btn-small dropdown-toggle', data: {toggle: 'dropdown' }) do
+            html_concat(
+                t('view'),
+                content_tag(:span, '', class: 'caret')
+            )
+          end,
+          ul(linkTypes, class:'dropdown-menu')
+      )
+    end
+
+  end
+
   def progressBar(shipment)
 
       tot = shipment.outboxes.count
@@ -39,8 +78,8 @@ module ApplicationHelper
         v = shipment.outboxes.having_status(status.to_s).count
         k = status
         w = tot==0 ? 0 : (10000 * v) / (100 * tot)
-        html = html + content_tag(:div, class: "progress-bar #{k}", style: "width: #{w}%", title:"#{k.humanize}:#{v} su #{tot}" ) do
-          content_tag(:span, "#{v}".html_safe, class:'sr-only')
+        html = html + content_tag(:div, class: "bar progress-bar #{k}", style: "width: #{w}%", title:"#{k.humanize}:#{v} su #{tot}" ) do
+          #content_tag(:span, "#{v}".html_safe, class:'sr-only')
         end
       end
 

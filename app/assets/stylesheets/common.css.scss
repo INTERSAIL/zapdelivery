@@ -18,6 +18,9 @@ $col4a: lighten($col4, 10%);
 $col4b: darken($col4, 10%);
 
 
+#mainTable td {
+  vertical-align: middle;
+}
 
 .PRONTO_PER_INVIO {
   background-color: $col1 !important;
