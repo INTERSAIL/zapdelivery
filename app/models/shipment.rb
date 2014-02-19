@@ -22,7 +22,7 @@ class Shipment < ActiveRecord::Base
   #  super && self.template.save && self.source.save
   #end
 
-  default_scope { order(created_at: :desc) }
+  default_scope -> { order(created_at: :desc) }
 
   def outbox_count
     self.outboxes.count

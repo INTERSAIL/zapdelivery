@@ -10,9 +10,7 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1
   # GET /shipments/1.json
   def show
-
     @outboxes = @shipment.outboxes
-
   end
 
   # GET /shipments/new

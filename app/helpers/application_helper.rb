@@ -56,7 +56,7 @@ module ApplicationHelper
 
     content_tag(:div, class: 'btn-group') do
       html_concat(
-          link_to(href: '#', class: 'btn btn-small dropdown-toggle', data: {toggle: 'dropdown' }) do
+          link_to(href: '#', class: 'btn btn-small dropdown-toggle', data: {toggle: 'dropdown' }, title: attachment.name) do
             html_concat(
                 t('view'),
                 content_tag(:span, '', class: 'caret')

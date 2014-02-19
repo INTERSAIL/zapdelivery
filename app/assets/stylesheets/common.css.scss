@@ -1,7 +1,7 @@
 
-$col1: #d9e3e3;
-$col2: #90faed;
-$col3: #6cfa81;
+$col1: #faa732;
+$col2: #4bb1cf;
+$col3: #5eb95e;
 $col4: #dd514c;
 
 $col1a: lighten($col1, 10%);
@@ -17,9 +17,21 @@ $col3b: darken($col3, 10%);
 $col4a: lighten($col4, 10%);
 $col4b: darken($col4, 10%);
 
+$colSelectedRow: rgba(176, 196, 255, 0.5);
 
 #mainTable td {
   vertical-align: middle;
+}
+
+#mainTable tr {
+  height: 36px;
+}
+
+#mainTable tr.even.row_selected td {
+  background-color: $colSelectedRow;
+}
+#mainTable tr.odd.row_selected td {
+  background-color: $colSelectedRow;
 }
 
 .PRONTO_PER_INVIO {
