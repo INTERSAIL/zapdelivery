@@ -25,6 +25,10 @@ $colsorting: #eee;
 
 $colHighlight: #ffe;
 
+.tooltip-inner {
+  background-color: #999;
+}
+
 table.dataTable tr.odd td.sorting_1 {
   background-color: $colsorting !important;
 }

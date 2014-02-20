@@ -38,7 +38,7 @@
 #topContainer  { margin-bottom: 1px; }
 #topContainer  { border-bottom:3px solid #ECF601 ;border-top:3px solid #ECF601
 }
-#middleContainer   { border-top:3px solid #322FCE }
+#middleContainer   { border-top:1px solid #322FCE }
 
 body .navbar .brand     { padding: 0; }
 .navbar .nav.last       { float: right;}
