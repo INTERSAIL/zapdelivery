@@ -3,8 +3,10 @@ $(document).on "page:change", ->
   nome_classe = $('body').attr "class"
   $('#btn_'+nome_classe).parent().addClass "active"
 
-  $('#mainTable td').hover ->
-    $(oTable).$('tr')
+  $('#mainTable tr').hover ->
+    $(oTable.fnSettings().aoData).each (i,d) =>
+      $(d.nTr).removeClass 'row_highlight'
+    $(this).addClass('row_highlight')
   $('#mainTable tbody').click (e) ->
     $(oTable.fnSettings().aoData).each (i,d) =>
       $(d.nTr).removeClass 'row_selected'

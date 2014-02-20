@@ -17,7 +17,28 @@ $col3b: darken($col3, 10%);
 $col4a: lighten($col4, 10%);
 $col4b: darken($col4, 10%);
 
-$colSelectedRow: rgba(176, 196, 255, 0.5);
+$colSelectedRow: rgba(255, 210, 36, 0.63);
+$colSelectedRowLight: lighten($colSelectedRow, 10%);
+$colSelectedRowDark: darken($colSelectedRow, 10%);
+
+$colsorting: #eee;
+
+$colHighlight: #ffe;
+
+#mainTable tr.odd td.sorting_1 {
+  background-color: $colsorting !important;
+}
+
+#mainTable tr.even td.sorting_1 {
+  background-color: lighten($colsorting, 5%) !important;
+}
+
+#mainTable tr.even.row_highlight td {
+  background-color: $colHighlight !important;
+}
+#mainTable tr.odd.row_highlight td {
+  background-color: $colHighlight !important;
+}
 
 #mainTable td {
   vertical-align: middle;
@@ -27,11 +48,14 @@ $colSelectedRow: rgba(176, 196, 255, 0.5);
   height: 36px;
 }
 
-#mainTable tr.even.row_selected td {
+
+#mainTable tr.row_selected td {
   background-color: $colSelectedRow;
-}
-#mainTable tr.odd.row_selected td {
-  background-color: $colSelectedRow;
+  background-image: -moz-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($colSelectedRowLight), to($colSelectedRowDark)) !important;
+  background-image: -webkit-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
+  background-image: -o-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
+  background-image: linear-gradient(to bottom, $colSelectedRowLight, $colSelectedRowDark) !important;
 }
 
 .PRONTO_PER_INVIO {
