@@ -25,31 +25,31 @@ $colsorting: #eee;
 
 $colHighlight: #ffe;
 
-#mainTable tr.odd td.sorting_1 {
+table.dataTable tr.odd td.sorting_1 {
   background-color: $colsorting !important;
 }
 
-#mainTable tr.even td.sorting_1 {
+table.dataTable tr.even td.sorting_1 {
   background-color: lighten($colsorting, 5%) !important;
 }
 
-#mainTable tr.even.row_highlight td {
+table.dataTable tr.even.row_highlight td {
   background-color: $colHighlight !important;
 }
-#mainTable tr.odd.row_highlight td {
+table.dataTable tr.odd.row_highlight td {
   background-color: $colHighlight !important;
 }
 
-#mainTable td {
+table.dataTable td {
   vertical-align: middle;
 }
 
-#mainTable tr {
+table.dataTable tr {
   height: 36px;
 }
 
 
-#mainTable tr.row_selected td {
+table.dataTable tr.row_selected td {
   background-color: $colSelectedRow;
   background-image: -moz-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($colSelectedRowLight), to($colSelectedRowDark)) !important;

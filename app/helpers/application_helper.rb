@@ -68,9 +68,15 @@ module ApplicationHelper
 
   end
 
+  def strong(args)
+    content_tag(:strong, args)
+  end
+
   def progressBar(shipment)
 
       tot = shipment.outboxes.count
+
+      tooltip = "<table style='color:black'>".html_safe
 
     html = ''
       Outbox.stato.values.each do |status|
@@ -78,14 +84,27 @@ module ApplicationHelper
         v = shipment.outboxes.having_status(status.to_s).count
         k = status
         w = tot==0 ? 0 : (10000 * v) / (100 * tot)
-        html = html + content_tag(:div, class: "bar progress-bar #{k}", style: "width: #{w}%", title:"#{k.humanize}:#{v} su #{tot}" ) do
+        html << content_tag(:div, class: "bar progress-bar #{k}", style: "width: #{w}%") do
           #content_tag(:span, "#{v}".html_safe, class:'sr-only')
         end
+
+        tooltip << content_tag(:tr,
+          [
+            content_tag(:td, "#{k.humanize}"),
+            content_tag(:td, "#{v}")
+          ].join.html_safe)
+
       end
 
-      html
+      tooltip << content_tag(:tr,
+        [
+            content_tag(:td, strong('TOTALE INVII')),
+            content_tag(:td, strong("#{tot}"))
+        ].join.html_safe)
 
-      content_tag(:div,html.html_safe,class:'progress')
+      tooltip << '</table>'.html_safe
+
+      content_tag(:div,html.html_safe,class:'progress has_tooltip', title: tooltip, data: {toggle: 'tooltip', placement: 'left', html: 'true'} )
   end
 
 

@@ -19,6 +19,8 @@ $(document).on "page:change", ->
     }
   }
 
+  $('.has_tooltip').tooltip()
+
   modal = $('#appModal')
   modal.on 'shown.bs.modal', ->
     modal.find('.modal-body').outerHeight(modal.find('.modal-dialog').outerHeight() - modal.find('.modal-header').outerHeight())

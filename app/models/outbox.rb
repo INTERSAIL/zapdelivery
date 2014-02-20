@@ -4,7 +4,7 @@ class Outbox < ActiveRecord::Base
   include Intersail::Util::AttachmentUtil
 
   extend Enumerize
-  enumerize :stato, in: {UNDEFINED:0, PRONTO_PER_INVIO:10, INVIATO:20, ERRORE:90, CONSEGNATO:30}, scope: :having_status
+  enumerize :stato, in: {UNDEFINED:0, PRONTO_PER_INVIO:10, INVIATO:20, CONSEGNATO:30, ERRORE:90}, scope: :having_status
   belongs_to :shipment
   attr_attachment(:allegato)
 
