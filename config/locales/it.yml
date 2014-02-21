@@ -9,6 +9,19 @@ it:
   inboxes:
     index:
       title: 'Ricezioni'
+  devise:
+    sessions:
+      new:
+        title: 'Autenticazione'
+        submit: 'Accedi'
+    shared:
+      links:
+        sign_in: 'Accedi'
+        sign_up: 'Registrati'
+        forgot_password: 'Hai dimenticato la password?'
+        didnt_receive_confirmation_instructions: "Non hai ricevuto le istruzioni di conferma?"
+        didnt_receive_unlock_instructions: "Non hai ricevuto le istruzioni per sbloccare l'account?"
+        sign_in_with: "Accedi utilizzando %{provider}"
 
 # SYSTEM
   date:

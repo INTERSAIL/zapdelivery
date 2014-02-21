@@ -61,3 +61,8 @@ it:
         description: "Descrizione"
         account: "Account"
         created_at: "Creato il"
+      user:
+        name: "Nome"
+        password: "Password"
+        remember_me: "Ricordami"
+
