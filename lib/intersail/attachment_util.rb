@@ -3,7 +3,7 @@ module Intersail
     module  AttachmentUtil
 
       def self.destination_path
-        Rails.root.join('app','assets','pdf')
+        Rails.root.join('public','attachments')
       end
       def getUrl(attachment)
         AttachmentUtil.destination_path.join("#{attachment.xid}").to_s
