@@ -140,8 +140,8 @@ ActiveRecord::Schema.define(version: 20131230165010) do
     t.string   "description"
     t.integer  "user_id"
     t.integer  "account_id"
-    t.integer  "source_id",   limit: 255
-    t.integer  "template_id", limit: 255
+    t.integer  "source_id"
+    t.integer  "template_id"
   end
 
   create_table "users", force: true do |t|
