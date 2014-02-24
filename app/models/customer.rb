@@ -7,7 +7,7 @@ class Customer < ActiveRecord::Base
 
   accepts_nested_attributes_for :departments
 
-  def to_s
+  def title
     self.ragione_sociale
   end
 
