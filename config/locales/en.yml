@@ -32,3 +32,6 @@ en:
         didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
         didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
         sign_in_with: "Sign in with %{provider}"
+
+# MESSAGES
+  not_signed_in: 'Accesso negato. Eseguire il login per proseguire'
