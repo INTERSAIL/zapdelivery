@@ -16,6 +16,7 @@ class ShipmentsController < ApplicationController
   # GET /shipments/new
   def new
     @shipment = Shipment.new
+    @shipment.account ||= Account.find(1)
   end
 
   # GET /shipments/1/edit
@@ -25,14 +26,19 @@ class ShipmentsController < ApplicationController
   # POST /shipments
   # POST /shipments.json
   def create
+    stati = [Array.new(10, :INVIATO), Array.new(1, :PRONTO_PER_INVIO), Array.new(20, :CONSEGNATO)].flatten
+
     @shipment = Shipment.new(shipment_params)
 
     @shipment.user = current_user
 
     ds = @shipment.source.datasource
     ds.data.each do |row|
-      o = @shipment.outboxes.build(destinatario:row.field('DESTINATARIO'), oggetto:@shipment.description, messaggio:'Testo del messaggio', stato: :PRONTO_PER_INVIO, data_stato:Time.now)
+      o = @shipment.outboxes.build(destinatario:row.field('DESTINATARIO'), oggetto:@shipment.description, messaggio:'Testo del messaggio', stato: stati.sample, data_stato:Time.now)
       o.allegato = o.saveStream(File.open(@shipment.getUrl(@shipment.template)), {name: @shipment.template.name, content_type: @shipment.template.content_type})
+      if o.stato.in? ['INVIATO', 'CONSEGNATO']
+        o.data_invio = Time.now.strftime '%d/%m/%Y %H:%M'
+      end
     end
 
     respond_to do |format|

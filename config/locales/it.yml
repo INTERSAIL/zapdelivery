@@ -7,6 +7,9 @@ it:
     not_signed_in: 'Accesso negato. Eseguire il login per proseguire'
 
 # VIEWS
+  stats:
+    index:
+      title: 'Statistiche'
   shipments:
     index:
       title: 'Invii'

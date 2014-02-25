@@ -1,13 +1,21 @@
 class StatsController < ApplicationController
   def index
+    cur_year = (params[:year] || Time.now.year).to_i
+
     @values = []
-    Outbox.all.group_by { |o| o.created_at.year }.each do |year, outboxes|
-      @values << {name: year.to_s, data: Hash[outboxes.group_by{|o| o.stato}.map{|s,o| [s,o.count]}] }
+    Outbox.all.where(['created_at >= ? AND created_at < ?', Time.new(cur_year),Time.new(cur_year+1)]).group_by { |o| o.created_at.month }.each do |year, outboxes|
+      @values << {name: t("date.month_names")[year].titleize, data: multigroup_by(outboxes) {|o| o.stato.humanize} }
     end
 
-#    @values = [
-#        {name: t('activerecord.models.shipment.other').to_s, data: Hash[Outbox.group(:stato).count.map { |k,v| [Outbox.stato.find_value(k).humanize,v] }]}
-#    ]
+    @channels = multigroup_by(Shipment.includes(:account).where(['created_at >= ? AND created_at < ?', Time.new(cur_year),Time.new(cur_year+1)])) { |s| s.account.channel.name }
 
+  end
+
+  def in_year(field, cur_year)
+    where(["#{field} >= ? AND #{field} < ?", Time.new(cur_year),Time.new(cur_year+1)])
+  end
+
+  def multigroup_by(values, &block)
+    Hash[values.group_by(&block).map { |k,v| [k,v.count] }]
   end
 end

@@ -2,6 +2,7 @@
   <%= f.input :description %>
   <%= f.input :templateStream , as: :file %>
   <%= f.input :sourceStream,  as: :file %>
+    <%= f.input :account_id, as: :hidden %>
 
     <%# collection_select (:post,:zf_id, current_user.accounts, :zf_id, :connection_string,prompt: true) %>
 

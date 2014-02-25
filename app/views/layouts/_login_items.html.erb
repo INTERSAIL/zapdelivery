@@ -7,6 +7,8 @@
     <li class="divider-vertical"></li>
     <li><%= link_to t('shipments.index.title'), shipments_url, id: "btn_shipments" %></li>
     <li class="divider-vertical"></li>
+    <li><%= link_to t('stats.index.title'), stats_index_path, id: "btn_stats" %></li>
+    <li class="divider-vertical"></li>
   </ul>
  <% end %>
 
@@ -14,7 +16,7 @@
   <ul class="nav last">
     <% if user_signed_in? %>
 
-        <li><%= link_to "Amministrazione", 'admin', id: "btn_admin" %></li>
+        <li><%= link_to "Amministrazione", rails_admin_path, id: "btn_admin" %></li>
         <li class="divider-vertical"></li>
 
     <li class="">
