@@ -1,6 +1,8 @@
 Zapdelivery::Application.routes.draw do
 
   get "stats/index"
+  get "stats/data"
+  get "stats/drilldown"
   root 'shipments#index'
 
   match '/datasources/show/:id' => 'datasources#show', as: 'datasource_show', via: :get
@@ -30,7 +32,6 @@ Zapdelivery::Application.routes.draw do
     end
 
   get "admin" => "users#index"
-
 
   resources :outboxes
 
