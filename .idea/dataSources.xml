@@ -27,7 +27,7 @@
     </data-source>
     <data-source source="LOCAL" name="Rails zapdelivery: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3c143fbf-ccbf-4160-b042-b22b40fa7c18">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:zapdelivery_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql:production</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
