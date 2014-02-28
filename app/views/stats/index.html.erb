@@ -1,4 +1,4 @@
-<% content_for :head do %>
+
     <%= javascript_include_tag 'rgraph/RGraph.bar' %>
     <%= javascript_include_tag 'rgraph/RGraph.line' %>
     <%= javascript_include_tag 'rgraph/RGraph.common.core' %>
@@ -10,10 +10,9 @@
     <%= javascript_tag do %>
         var bar;
         var drilldown_params;
-        window.onload = function () {
+        $(window).bind("page:change", function () {
             refreshData();
-
-        }
+        });
     <% end %>
 
     <%= javascript_tag do %>
@@ -33,6 +32,7 @@
             bar.Set('tooltips.event','onmousemove');
             bar.Set('key', data.keys);
             bar.Set('key.position', 'gutter');
+            bar.Set('gutter.top', 75);
             bar.Set('events.click', onBarClick);
 
             /*bar.Draw();*/
@@ -72,7 +72,7 @@
         }
     <% end %>
 
-<% end %>
+
 
 <div class="page-header">
     <h1>Stato Spedizioni</h1>
