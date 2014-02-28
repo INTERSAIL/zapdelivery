@@ -82,10 +82,10 @@
   <div class="chart-filter">
     Anno: <%= select_year @cur_year, { start_year: 2012, end_year: Date.today.year }, { id: 'year', onchange: 'refreshData();' } %>
   </div>
-  <div>
+  <div class="chart-master">
     <canvas id="rgraph" width=800px" height="250">[Your browser doesn't support canvas]</canvas>
   </div>
-  <div>
+  <div class="chart-drilldown">
     <canvas id="cvs" width=800px" height="250">[Your browser doesn't support canvas]</canvas>
   </div>
 </div>
