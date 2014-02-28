@@ -10,8 +10,8 @@
     <%= javascript_tag do %>
         var bar;
         var drilldown_params;
-        $(window).bind("page:change", function () {
-            refreshData();
+        $(document).on("page:change", function () {
+            <refresh></refresh>Data();
         });
     <% end %>
 
