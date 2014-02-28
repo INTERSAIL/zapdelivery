@@ -3,7 +3,6 @@ module ApplicationHelper
     child.try(:new_record?) ? [parent, child] : child
   end
 
-
   def fileAttachmentLinkView (attachment)
 
     emptyHtml = '-'
