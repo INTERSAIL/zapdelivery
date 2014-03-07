@@ -30,6 +30,9 @@ it:
         even: "deve essere pari"
         email_record_invalid: "La validazione e fallita: %{errors}"
     models:
+      template:
+        one: 'Modello'
+        other: 'Modelli'
       shipment:
         one: "Spedizione"
         other: "Spedizioni"
@@ -46,8 +49,8 @@ it:
         one: "Dipartimento"
         other: "Dipartimenti"
       outbox:
-        one: "Posta in uscita"
-        other: "Posta in uscita"
+        one: "Invio"
+        other: "Invii"
       inbox:
         one: "Ricezione"
         other: "Ricezioni"
@@ -55,6 +58,10 @@ it:
         one: "Utente"
         other: "Utenti"
     attributes:
+      template:
+        name: 'Nome'
+        template_docStream: 'Modello'
+        tags: 'Tags'
       shipment:
         templateStream: "Modello"
         sourceStream: "Dati"

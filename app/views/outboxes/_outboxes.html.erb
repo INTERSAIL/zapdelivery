@@ -1,0 +1,33 @@
+<%- model_class = Outbox -%>
+<table class="table table-striped" id="mainTable">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:created_at) %></th>
+    <th><%= model_class.human_attribute_name(:destinatario) %></th>
+    <th><%= model_class.human_attribute_name(:oggetto) %></th>
+    <th><%= model_class.human_attribute_name(:data_invio) %></th>
+    <th><%= model_class.human_attribute_name(:stato) %></th>
+    <th><%= model_class.human_attribute_name(:data_stato) %></th>
+    <th><i class="icon-file"></i> <%= model_class.human_attribute_name(:allegato) %> </th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% outboxes.each do |outbox| %>
+      <tr class="stato_<%= outbox.stato_value %>">
+        <td><%=l outbox.created_at %></td>
+        <td><%= outbox.destinatario %></td>
+        <td><%= link_to outbox.oggetto, outbox, remote: true %></td>
+        <td><%=if outbox.data_invio?
+                 l outbox.data_invio, format: :long
+               else
+                 '---'
+               end%></td>
+        <td><%= outbox.stato_text %></td>
+        <td><%=l outbox.data_stato %></td>
+        <td><%= fileAttachmentLinkView outbox.allegato %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

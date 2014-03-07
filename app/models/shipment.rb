@@ -4,10 +4,12 @@ class Shipment < ActiveRecord::Base
   include Intersail::Util::AttachmentUtil
 
   has_many :outboxes
+
   belongs_to :user
   belongs_to :account
+  belongs_to :template
 
-  attr_attachment(:template , :source)
+  attr_attachment(:source)
 
   #belongs_to :template, class_name: "Attachment"
   #belongs_to :source, class_name: "Attachment"

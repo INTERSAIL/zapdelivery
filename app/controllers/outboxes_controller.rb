@@ -5,7 +5,7 @@ class OutboxesController < ApplicationController
   # GET /outboxes
   # GET /outboxes.json
   def index
-    @outboxes = Outbox.all
+    @outboxes = params[:template_id] ? Outbox.with_template_id(params[:template_id]) :  Outbox.all
   end
 
   # GET /outboxes/1

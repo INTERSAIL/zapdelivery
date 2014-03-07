@@ -1,5 +1,9 @@
 Zapdelivery::Application.routes.draw do
 
+  resources :templates do
+    resources :outboxes
+  end
+
   root 'shipments#index'
 
   match '/datasources/show/:id' => 'datasources#show', as: 'datasource_show', via: :get

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230165010) do
+ActiveRecord::Schema.define(version: 20140307162601) do
 
   create_table "accounts", force: true do |t|
     t.string   "connection_string"
@@ -140,8 +140,17 @@ ActiveRecord::Schema.define(version: 20131230165010) do
     t.string   "description"
     t.integer  "user_id"
     t.integer  "account_id"
-    t.integer  "source_id",   limit: 255
-    t.integer  "template_id", limit: 255
+    t.integer  "source_id",      limit: 255
+    t.integer  "template_id",    limit: 255
+    t.integer  "outboxes_count"
+  end
+
+  create_table "templates", force: true do |t|
+    t.string   "name"
+    t.integer  "template_doc_id"
+    t.text     "tags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

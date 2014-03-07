@@ -1,0 +1,10 @@
+<%= simple_form_for @template, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :template_docStream, as: :file %>
+  <%= f.input :tags %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                templates_path, :class => 'btn' %>
+  </div>
+<% end %>

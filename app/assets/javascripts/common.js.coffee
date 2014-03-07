@@ -12,12 +12,15 @@ $(document).on "page:change", ->
       $(d.nTr).removeClass 'row_selected'
     $(e.target.parentNode).addClass('row_selected')
 
-  oTable = $('#mainTable').dataTable {
-    iDisplayLength: 25,
-    oLanguage: {
-      sUrl : '/assets/jquery.dataTables.italian.txt'
+  oTable = $('#mainTable')
+
+  if(!oTable.hasClass 'dataTable')
+    oTable = oTable.dataTable {
+      iDisplayLength: 25,
+      oLanguage: {
+        sUrl : '/assets/jquery.dataTables.italian.txt'
+      }
     }
-  }
 
   $('.has_tooltip').tooltip()
 
