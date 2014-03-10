@@ -10,7 +10,13 @@ it:
   stats:
     index:
       title: 'Statistiche'
+  templates:
+    index:
+      title: 'Modelli'
   shipments:
+    index:
+      title: 'Spedizioni'
+  outboxes:
     index:
       title: 'Invii'
   inboxes:

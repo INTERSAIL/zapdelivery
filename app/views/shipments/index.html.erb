@@ -21,7 +21,7 @@
       <tr>
         <td><%= link_to shipment.description, shipment_path(shipment) %></td>
 
-        <td><%= attachmentLink shipment.template, ['View', 'Download'] %></td>
+        <td><%= attachmentLink shipment.template.template_doc, ['View', 'Download'] %></td>
         <td><%= attachmentLink shipment.source, ['Table', 'View', 'Download'] %></td>
 
         <td><%= progressBar shipment %></td>
