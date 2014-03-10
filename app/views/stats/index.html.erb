@@ -1,13 +1,5 @@
 <% require 'intersail/helpers' %>
 
-    <%= javascript_include_tag 'rgraph/RGraph.bar' %>
-    <%= javascript_include_tag 'rgraph/RGraph.line' %>
-    <%= javascript_include_tag 'rgraph/RGraph.common.core' %>
-    <%= javascript_include_tag 'rgraph/RGraph.common.dynamic' %>
-    <%= javascript_include_tag 'rgraph/RGraph.common.key' %>
-    <%= javascript_include_tag 'rgraph/RGraph.common.tooltips' %>
-    <%= javascript_include_tag 'rgraph/RGraph.common.effects' %>
-
     <%= javascript_tag do %>
         var bar;
         var drilldown_params;
@@ -21,6 +13,9 @@
             RGraph.AJAX.getJSON('<%= stats_data_path %>?year=' + $('#year').val(), ajaxGraph);
         }
         function ajaxGraph(data) {
+            var g = document.getElementById('rgraph');
+            if(!g)
+                return;
             RGraph.Reset(document.getElementById('rgraph'));
 
             bar = new RGraph.Bar('rgraph', data.values);

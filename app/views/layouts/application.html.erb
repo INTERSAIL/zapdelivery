@@ -7,10 +7,16 @@
   <title>Zapdelivery</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-  <%= csrf_meta_tags %>
 
-  <%= yield :head %>
+  <%= javascript_include_tag 'rgraph/RGraph.bar' %>
+  <%= javascript_include_tag 'rgraph/RGraph.line' %>
+  <%= javascript_include_tag 'rgraph/RGraph.common.core' %>
+  <%= javascript_include_tag 'rgraph/RGraph.common.dynamic' %>
+  <%= javascript_include_tag 'rgraph/RGraph.common.key' %>
+  <%= javascript_include_tag 'rgraph/RGraph.common.tooltips' %>
+  <%= javascript_include_tag 'rgraph/RGraph.common.effects' %>
+
+  <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
 
